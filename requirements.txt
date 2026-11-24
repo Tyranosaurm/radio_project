@@ -1,0 +1,2 @@
+# Install the analyzer and its dependencies from the repository root.
+.
