@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "radio-show-analyzer"
+version = "0.2.0"
+description = "Transcribe speech and identify songs in radio recordings"
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "faster-whisper==1.1.1",
+    "shazamio==0.8.0",
+    # faster-whisper 1.1.1 imports requests without declaring it directly.
+    "requests>=2.32,<3",
+]
+
+[project.scripts]
+radio-analyzer = "radio_workflow.radioprocess:cli"
+
+[tool.setuptools.packages.find]
+include = ["radio_workflow*"]
